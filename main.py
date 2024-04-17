@@ -68,14 +68,15 @@ import os
 
 @bot.on_message(filters.command(["restart"]))
 def restart(client, message):
-    # Get OWNER_ID from environment variables
-    OWNER_ID = os.getenv("5264572437")  # Replace "None" with your actual OWNER_ID
-
-    if message.from_user.id == int(OWNER_ID):
+    # Set your OWNER_ID here
+    OWNER_ID = 5264572437  # Replace 1234567890 with your actual OWNER_ID
+    
+    if message.from_user.id == OWNER_ID:
         bot.send_message(message.chat.id, "Restarting...")
         bot.stop()
     else:
         bot.send_message(message.chat.id, "You are not authorized to use this command.")
+
 
 
 
