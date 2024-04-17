@@ -4,6 +4,7 @@ from pyrogram.errors import UserAlreadyParticipant, InviteHashExpired, UsernameN
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 import time
+import sys
 import os
 import threading
 import json
