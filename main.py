@@ -12,7 +12,7 @@ from os import environ
 bot_token = environ.get("5276059751:AAFCja69AW-EVshgRkqblUXRI95sblvIOTQ") 
 api_hash = environ.get("bc7a1ff026c4305bcf4f38807aabbec5") 
 api_id = environ.get("11978076")
-bot = Client("mybot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+bot = Client("Sortxfast_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 ss = environ.get("STRING", "AQC2xVwAlC8zull3H4CYVr_fnhnxsuv0_dtQqEZTRqGf99-7rBKuPbtakz6rDkfs8PgjmEFqfqLL-k-Ld2-d1KuVCDkb4IwT1HYkExwJbyW7dQrT0ko75ttvNujUOwSMfKowHgeCX4zTqvqXmlCkDImPYcxN_KzmtGP2bi_6PXn_--6sbk3kQEHxcw4i21jFh0-k6j0t-pyZQT7D7Z2VpNchvmGgnCdldMVmi-sFmd9Pyg9hTSqQ8KzhQi_pcz-dM6w4VMKiHLDltpoYpPzXCqp9Sr5UCJ125hl0U15h0dYYdtGJXD1OQ37k9jI5p2rIasBsT5XBJLWigC9uxCy88iGvNjvdMQAAAAE5ywAVAA")
 if ss is not None:
