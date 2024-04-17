@@ -69,7 +69,7 @@ import os
 @bot.on_message(filters.command(["restart"]))
 def restart(client, message):
     # Get OWNER_ID from environment variables
-    OWNER_ID = os.getenv("OWNER_ID")  # Replace "None" with your actual OWNER_ID
+    OWNER_ID = os.getenv("5264572437")  # Replace "None" with your actual OWNER_ID
 
     if message.from_user.id == int(OWNER_ID):
         bot.send_message(message.chat.id, "Restarting...")
