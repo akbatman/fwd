@@ -63,22 +63,19 @@ def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_
     bot.send_message(message.chat.id, f"**__👋 Hi** **{message.from_user.mention}**, **I am Save Restricted Bot, I can send you restricted content by it's post link__**\n\n{USAGE}",
     reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🌐 Update Channel", url="https://t.me/VJ_Botz")]]), reply_to_message_id=message.id)
 
-# restart command
-import os
+# Get the OWNER_ID from environment variables
+OWNER_ID = int(os.getenv("OWNER_ID", "5264572437"))
 
+# Bot restart command
 @bot.on_message(filters.command(["restart"]))
 def restart(client, message):
-    # Set your OWNER_ID here
-    OWNER_ID = 5264572437  # Replace 1234567890 with your actual OWNER_ID
-    
+    # Check if the user is authorized
     if message.from_user.id == OWNER_ID:
         bot.send_message(message.chat.id, "Restarting...")
-        bot.stop()
+        # Use os.execv to replace the current process with a new one
+        os.execv(sys.executable, ['python3'] + sys.argv)
     else:
         bot.send_message(message.chat.id, "You are not authorized to use this command.")
-
-
-
 
 @bot.on_message(filters.text)
 def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
