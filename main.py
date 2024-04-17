@@ -66,11 +66,15 @@ def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_
 # restart command
 @bot.on_message(filters.command(["restart"]))
 def restart(client, message):
-    if message.from_user.id == int(os.getenv("OWNER_ID")):
+    # Set your OWNER_ID here
+    OWNER_ID = 5264572437  # Replace 1234567890 with your actual OWNER_ID
+    
+    if message.from_user.id == OWNER_ID:
         bot.send_message(message.chat.id, "Restarting...")
         bot.stop()
     else:
         bot.send_message(message.chat.id, "You are not authorized to use this command.")
+
 
 @bot.on_message(filters.text)
 def save(client: pyrogram.client.Client, message: pyrogram.types.messages_and_media.message.Message):
