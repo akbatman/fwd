@@ -70,10 +70,11 @@ OWNER_ID = int(os.getenv("OWNER_ID", "5264572437"))
 # Bot restart command
 @bot.on_message(filters.command(["restart"]))
 def restart(client, message):
-    # Check if the user is authorized
-    if message.from_user.id == OWNER_ID:
+    # Get OWNER_ID from environment variables
+    OWNER_ID = os.getenv("5264572437")  # Replace "None" with your actual OWNER_ID
+
+    if message.from_user.id == int(OWNER_ID):
         bot.send_message(message.chat.id, "Restarting...")
-        # Use os.execv to replace the current process with a new one
         os.execv(sys.executable, ['python3'] + sys.argv)
     else:
         bot.send_message(message.chat.id, "You are not authorized to use this command.")
