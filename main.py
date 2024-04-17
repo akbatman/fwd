@@ -65,7 +65,7 @@ def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_
     reply_markup=InlineKeyboardMarkup([[ InlineKeyboardButton("🌐 Update Channel", url="https://t.me/VJ_Botz")]]), reply_to_message_id=message.id)
 
 # Get the OWNER_ID from environment variables
-export OWNER_ID=5264572437
+export OWNER_ID="5264572437"
 
 # Bot restart command
 @bot.on_message(filters.command(["restart"]))
