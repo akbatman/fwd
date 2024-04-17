@@ -3,9 +3,11 @@ from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant, InviteHashExpired, UsernameNotOccupied
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-import time
-import sys
 import os
+import sys
+import pyrogram
+from pyrogram import Client, filters
+import time
 import threading
 import json
 from os import environ
@@ -67,12 +69,11 @@ def send_start(client: pyrogram.client.Client, message: pyrogram.types.messages_
 # Set the OWNER_ID environment variable
 os.environ["OWNER_ID"] = "5264572437"
 
-# Bot restart command
+# Command to restart the bot
 @bot.on_message(filters.command(["restart"]))
 def restart(client, message):
     # Get OWNER_ID from environment variables
-    OWNER_ID = os.getenv("OWNER_ID")  # Replace "None" with your actual OWNER_ID
-
+    OWNER_ID = os.getenv("OWNER_ID")
     if message.from_user.id == int(OWNER_ID):
         bot.send_message(message.chat.id, "Restarting...")
         os.execv(sys.executable, ['python3'] + sys.argv)
@@ -83,8 +84,7 @@ def restart(client, message):
 @bot.on_message(filters.command(["restarted"]))
 def restarted(client, message):
     # Get OWNER_ID from environment variables
-    OWNER_ID = os.getenv("OWNER_ID")  # Replace "None" with your actual OWNER_ID
-
+    OWNER_ID = os.getenv("OWNER_ID")
     if message.from_user.id == int(OWNER_ID):
         bot.send_message(message.chat.id, "Bot has been restarted successfully!")
     else:
