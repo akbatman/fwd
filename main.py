@@ -29,15 +29,15 @@ def downstatus(statusfile,message):
         if os.path.exists(statusfile):
             break
 
-    time.sleep(3)      
+    time.sleep(7)      
     while os.path.exists(statusfile):
         with open(statusfile,"r") as downread:
             txt = downread.read()
         try:
             bot.edit_message_text(message.chat.id, message.id, f"__Downloaded__ : **{txt}**")
-            time.sleep(15)
-        except:
             time.sleep(10)
+        except:
+            time.sleep(05)
 
 # upload status
 def upstatus(statusfile,message):
@@ -45,15 +45,15 @@ def upstatus(statusfile,message):
         if os.path.exists(statusfile):
             break
 
-    time.sleep(3)      
+    time.sleep(7)      
     while os.path.exists(statusfile):
         with open(statusfile,"r") as upread:
             txt = upread.read()
         try:
             bot.edit_message_text(message.chat.id, message.id, f"__Uploaded__ : **{txt}**")
-            time.sleep(15)
-        except:
             time.sleep(10)
+        except:
+            time.sleep(05)
 
 # progress writter
 def progress(current, total, message, type):
@@ -268,24 +268,7 @@ def get_message_type(msg: pyrogram.types.messages_and_media.message.Message):
 	except: pass
 
 
-USAGE = """**FOR PUBLIC CHATS**
-
-**__just send post/s link__**
-
-**FOR PRIVATE CHATS**
-
-**__first send invite link of the chat (unnecessary if the account of string session already member of the chat)
-then send post/s link__**
-
-**FOR BOT CHATS**
-
-**__send link with** '/b/', **bot's username and message id, you might want to install some unofficial client to get the id like below__**
-
-```
-https://t.me/b/botusername/4321
-```
-
-**MULTI POSTS**
+USAGE = """**MULTI POSTS**
 
 **__send public/private posts link as explained above with formate "from - to" to send multiple messages like below__**
 
