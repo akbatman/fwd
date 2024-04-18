@@ -29,7 +29,7 @@ def downstatus(statusfile,message):
         if os.path.exists(statusfile):
             break
 
-    time.sleep(7)      
+    time.sleep(10)      
     while os.path.exists(statusfile):
         with open(statusfile,"r") as downread:
             txt = downread.read()
@@ -45,7 +45,7 @@ def upstatus(statusfile,message):
         if os.path.exists(statusfile):
             break
 
-    time.sleep(7)      
+    time.sleep(10)      
     while os.path.exists(statusfile):
         with open(statusfile,"r") as upread:
             txt = upread.read()
