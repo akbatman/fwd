@@ -37,7 +37,7 @@ def downstatus(statusfile,message):
             bot.edit_message_text(message.chat.id, message.id, f"__Downloaded__ : **{txt}**")
             time.sleep(10)
         except:
-            time.sleep(05)
+            time.sleep(10)
 
 # upload status
 def upstatus(statusfile,message):
@@ -53,7 +53,7 @@ def upstatus(statusfile,message):
             bot.edit_message_text(message.chat.id, message.id, f"__Uploaded__ : **{txt}**")
             time.sleep(10)
         except:
-            time.sleep(05)
+            time.sleep(10)
 
 # progress writter
 def progress(current, total, message, type):
