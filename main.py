@@ -268,7 +268,7 @@ def get_message_type(msg: pyrogram.types.messages_and_media.message.Message):
 	except: pass
 
 
-USAGE = """**MULTI POSTS**
+USAGE = """**MULTI**
 
 **__send public/private posts link as explained above with formate "from - to" to send multiple messages like below__**
 
